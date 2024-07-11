@@ -54,6 +54,7 @@ import { DisplayIndicator } from "./DisplayIndicator";
 import { YesterdayStructure } from "./YesterdayStructure";
 import { VWAP } from "./VWAP";
 import averageTrueRange from "./atr";
+import Quarters from "./Quarters";
 
 const indicators: Record<string, IndicatorConstructor> = {}
 
@@ -65,7 +66,7 @@ const extensions = [
   psychologicalLine, rateOfChange, relativeStrengthIndex, simpleMovingAverage,
   stoch, stopAndReverse, tripleExponentiallySmoothedAverage, volume, volumeRatio, williamsR,
   relativeStrength, openInterest, TWaveVolume, TBlockVolume, Tpace, TBidAskOscillator, TCumulativeDelta, TWave,
-  YesterdayStructure, VWAP, averageTrueRange
+  YesterdayStructure, VWAP, averageTrueRange, Quarters
 ]
 
 const mapName = {
@@ -106,7 +107,8 @@ const mapName = {
   "TWA": "TWave",
   "YEST": "Yesterday Low",
   "VWAP": "VWAP",
-  "ATR": "Average True Range"
+  "ATR": "Average True Range",
+  "QUA": "Quarter"
 };
 
 

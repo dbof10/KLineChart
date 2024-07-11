@@ -12,19 +12,19 @@
  * limitations under the License.
  */
 
-import type Nullable from '../common/Nullable'
-import { type EventHandler, type EventName } from '../common/SyntheticEvent'
-import Eventful from '../common/Eventful'
-import { isValid } from '../common/utils/typeChecks'
+import type Nullable from "../common/Nullable";
+import { type EventHandler, type EventName } from "../common/SyntheticEvent";
+import Eventful from "../common/Eventful";
+import { isValid } from "../common/utils/typeChecks";
 
-import type Figure from '../component/Figure'
-import type Axis from '../component/Axis'
-import { type FigureCreate } from '../component/Figure'
+import type Figure from "../component/Figure";
+import { type FigureCreate } from "../component/Figure";
+import type Axis from "../component/Axis";
 
-import { getInnerFigureClass } from '../extension/figure/index'
+import { getInnerFigureClass } from "../extension/figure/index";
 
-import type DrawWidget from '../widget/DrawWidget'
-import type DrawPane from '../pane/DrawPane'
+import type DrawWidget from "../widget/DrawWidget";
+import type DrawPane from "../pane/DrawPane";
 
 export default abstract class View<C extends Axis = Axis> extends Eventful {
   /**
@@ -60,7 +60,11 @@ export default abstract class View<C extends Axis = Axis> extends Eventful {
 
   draw (ctx: CanvasRenderingContext2D): void {
     this.clear()
-    this.drawImp(ctx)
+    try {
+      this.drawImp(ctx)
+    }catch (e) {
+      console.error(e)
+    }
   }
 
   protected abstract drawImp (ctx: CanvasRenderingContext2D): void

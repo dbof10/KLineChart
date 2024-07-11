@@ -17,7 +17,7 @@ type TradingHours = {
 }
 
 export const defaultSettings: TradingSettings = {
-  drawSessionBreak: true,
+  drawSessionBreak: false,
   tradingHours: {
     morningSession: {
       open: "09:00:00",
